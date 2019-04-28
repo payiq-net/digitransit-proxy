@@ -177,8 +177,8 @@ describe('hsl ui', function() {
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
-  testRedirect('reittiopas.hsl.fi','/uudetvyohykkeet','https://vyohykereittiopas.hsl.fi', true);
-  testRedirect('reittiopas.hsl.fi','/uudetvyöhykkeet','https://vyohykereittiopas.hsl.fi', true);
+  testRedirect('reittiopas.hsl.fi','/uudetvyohykkeet','https://reittiopas.hsl.fi', true);
+  testRedirect('reittiopas.hsl.fi','/uudetvyöhykkeet','https://reittiopas.hsl.fi', true);
 
   //next-dev site
   testRedirect('www.next-dev.digitransit.fi','/kissa','http://next-dev.digitransit.fi/kissa');
@@ -186,8 +186,7 @@ describe('hsl ui', function() {
   testProxying('next-dev.digitransit.fi','/','digitransit-ui-hsl-next:8080', true);
   testCaching('next-dev.digitransit.fi','/sw.js', true);
 
-  testRedirect('vyohykereittiopas.hsl.fi','/kissa','https://vyohykereittiopas.hsl.fi/kissa');
-  testProxying('vyohykereittiopas.hsl.fi','/','digitransit-ui-hsl-next:8080', true);
+  testRedirect('vyohykereittiopas.hsl.fi','/kissa','https://reittiopas.hsl.fi/kissa');
 });
 
 describe('matka ui', function() {
