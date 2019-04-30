@@ -11,7 +11,8 @@ sed -i "s/LAPPEENRANTA_BASIC_AUTH/${LAPPEENRANTA_BASIC_AUTH}/" /etc/nginx/extern
 sed -i "s/LINKKI_BASIC_AUTH/${LINKKI_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/NEW_LISSU_BASIC_AUTH/${NEW_LISSU_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/SAMOCAT_TOKEN_AUTH/${SAMOCAT_TOKEN_AUTH}/" /etc/nginx/external.conf
-sed -i "s/hslgtfsrealtimetest/${HSL_PROD_RT}/" /etc/nginx/common.conf
+sed -i "s/hslgtfsrealtimetest/${HSL_RT_STORAGE_NAME}/" /etc/nginx/common.conf
+sed -i "s/LAHTI_BASIC_AUTH/${LAHTI_BASIC_AUTH}/" /etc/nginx/external.conf
 
 #start nginx
 nginx
