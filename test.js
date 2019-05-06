@@ -244,7 +244,6 @@ describe('waltti ui', function() {
 });
 
 describe('digitransit', function() {
-  testRedirect('www.digitransit.com','/kissa','http://digitransit.fi/kissa');
   testProxying('digitransit.fi','/','digitransit-site:8080', true);
 });
 
