@@ -133,11 +133,8 @@ describe('api.digitransit.fi', function() {
   testProxying('api.digitransit.fi','/routing/v1/routers/hsl','opentripplanner-next:8080');
   testProxying('api.digitransit.fi','/routing/v1/routers/waltti','opentripplanner-waltti:8080');
   testProxying('dev-api.digitransit.fi','/routing/v1/routers/next-hsl','opentripplanner-next:8080');
-  testProxying('dev-api.digitransit.fi','/routing/v1/routers/legacy-hsl','opentripplanner-hsl:8080');
   testProxying('api.digitransit.fi','/routing-data/v2/hsl/router-hsl.zip','opentripplanner-data-con-next-hsl:8080');
   testResponseHeader('api.digitransit.fi','/routing-data/v2/hsl/router-config.json', 'access-control-allow-origin', '*');
-  testProxying('dev-api.digitransit.fi','/routing-data/v2/legacy-hsl/router-hsl.zip','opentripplanner-data-con-hsl:8080');
-  testResponseHeader('dev-api.digitransit.fi','/routing-data/v2/legacy-hsl/router-config.json', 'access-control-allow-origin', '*');
   testProxying('api.digitransit.fi','/routing-data/v2/waltti/router-waltti.zip','opentripplanner-data-con-waltti:8080');
   testResponseHeader('api.digitransit.fi','/routing-data/v2/waltti/router-config.json', 'access-control-allow-origin', '*');
   testProxying('api.digitransit.fi','/routing-data/v2/finland/router-finland.zip','opentripplanner-data-con-finland:8080');
