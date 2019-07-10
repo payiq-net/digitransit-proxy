@@ -245,6 +245,7 @@ describe('sentry-analytics', function() {
 });
 
 describe('yleisviestipalvelu', function() {
+  testCaching('yleisviesti.hsl.fi','/', true);
   testProxying('yleisviesti.hsl.fi','/','yleisviestipalvelu:8080', true);
 });
 
