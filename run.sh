@@ -13,6 +13,7 @@ sed -i "s/NEW_LISSU_BASIC_AUTH/${NEW_LISSU_BASIC_AUTH}/" /etc/nginx/external.con
 sed -i "s/SAMOCAT_TOKEN_AUTH/${SAMOCAT_TOKEN_AUTH}/" /etc/nginx/external.conf
 sed -i "s/hslgtfsrealtimetest/${HSL_RT_STORAGE_NAME}/" /etc/nginx/common.conf
 sed -i "s/LAHTI_BASIC_AUTH/${LAHTI_BASIC_AUTH}/" /etc/nginx/external.conf
+sed -i "s/MATKAHUOLTO_BASIC_AUTH/${MATKAHUOLTO_BASIC_AUTH}/" /etc/nginx/external.conf
 
 #start nginx
 nginx
