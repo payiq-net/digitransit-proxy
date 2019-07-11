@@ -231,9 +231,6 @@ describe('waltti ui', function() {
   testProxying('reittiopas.tampere.fi','/','digitransit-ui-waltti:8080', true);
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
-  describe('sentry-analytics', function() {
-    testProxying('sentry-analytics.digitransit.fi','/','digitransit-sentry-analytics:8080', true);
-  });
 
   it('https should not redirect', function(done) {
     httpsGet('turku.digitransit.fi','/kissa').end((err,res)=>{
@@ -241,6 +238,15 @@ describe('waltti ui', function() {
       done();
     });
   });
+});
+
+describe('sentry-analytics', function() {
+  testProxying('sentry-analytics.digitransit.fi','/','digitransit-sentry-analytics:8080', true);
+});
+
+describe('yleisviestipalvelu', function() {
+  testCaching('yleisviesti.hsl.fi','/', true);
+  testProxying('yleisviesti.hsl.fi','/','yleisviestipalvelu:8080', true);
 });
 
 describe('digitransit', function() {
