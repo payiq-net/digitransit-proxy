@@ -18,7 +18,13 @@ CONTAINER_ID=`docker run -d -p 9000:8080 $ADDHOSTS -e VILKKU_BASIC_AUTH="\"test\
   -e JOJO_BASIC_AUTH="\"test\"" -e LAPPEENRANTA_BASIC_AUTH="\"test\"" -e LINKKI_BASIC_AUTH="\"test\"" \
   -e NEW_LISSU_BASIC_AUTH="\"test\"" -e SAMOCAT_TOKEN_AUTH="\"test\"" \
   -e LAHTI_BASIC_AUTH="\"test\"" -e HSL_RT_STORAGE_NAME=transitdataprod \
-  -e MATKAHUOLTO_BASIC_AUTH="\"test\"" hsldevcom/digitransit-proxy:integrationtest`
+  -e MATKAHUOLTO_KAINUU_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_SAVO_BASIC_AUTH="\"test\"" \
+  -e MATKAHUOLTO_KANTA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_KARJALA_BASIC_AUTH="\"test\"" \
+  -e MATKAHUOLTO_KESKI_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_KYME_BASIC_AUTH="\"test\"" \
+  -e MATKAHUOLTO_LAPPI_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_POHJANMAA_BASIC_AUTH="\"test\"" \
+  -e MATKAHUOLTO_SATAKUNTA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_VAKKA_BASIC_AUTH="\"test\"" \
+  -e MATKAHUOLTO_VANTAA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_VARSINAIS_BASIC_AUTH="\"test\"" \
+  hsldevcom/digitransit-proxy:integrationtest`
 
 curl -v http://127.0.0.1:9000
 
