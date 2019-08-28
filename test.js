@@ -249,6 +249,8 @@ describe('sentry-analytics', function() {
 describe('yleisviestipalvelu', function() {
   testCaching('yleisviesti.hsl.fi','/', true);
   testProxying('yleisviesti.hsl.fi','/','yleisviestipalvelu:8080', true);
+  testCaching('dev-yleisviesti.digitransit.fi','/', true);
+  testProxying('dev-yleisviesti.digitransit.fi','/','yleisviestipalvelu:8080', true);
 });
 
 describe('digitransit', function() {
