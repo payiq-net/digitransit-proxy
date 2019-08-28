@@ -244,6 +244,7 @@ describe('waltti ui', function() {
 
 describe('sentry-analytics', function() {
   testProxying('sentry-analytics.digitransit.fi','/','digitransit-sentry-analytics:8080', true);
+  testRedirect('sentry-analytics.digitransit.fi','/kissa','https://sentry-analytics.digitransit.fi/kissa');
 });
 
 describe('yleisviestipalvelu', function() {
