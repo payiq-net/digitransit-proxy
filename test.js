@@ -116,10 +116,6 @@ describe('api.digitransit.fi', function() {
   testCaching('api.digitransit.fi','/realtime/siri2gtfsrt/v1/foo', false)
   testProxying('api.digitransit.fi','/realtime/trip-updates/v1/','siri2gtfsrt:8080');
   testCaching('api.digitransit.fi','/realtime/trip-updates/v1/foo', false)
-  testProxying('api.digitransit.fi','/realtime/hslalert/v1/','hslalert:8080');
-  testCaching('api.digitransit.fi','/realtime/hslalert/v1/foo', false);
-  testProxying('api.digitransit.fi','/realtime/service-alerts/v1/','hslalert:8080');
-  testCaching('api.digitransit.fi','/realtime/service-alerts/v1/foo',false);
   testProxying('api.digitransit.fi','/realtime/navigator-server/v1/','navigator-server:8080');
   testCaching('api.digitransit.fi','/realtime/navigator-server/v1/foo',false);
   testProxying('api.digitransit.fi','/realtime/vehicle-positions/v1/','navigator-server:8080');
