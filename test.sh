@@ -16,8 +16,7 @@ echo $ADDHOSTS
 
 CONTAINER_ID=`docker run -d -p 9000:8080 $ADDHOSTS -e VILKKU_BASIC_AUTH="\"test\"" \
   -e JOJO_BASIC_AUTH="\"test\"" -e LAPPEENRANTA_BASIC_AUTH="\"test\"" -e LINKKI_BASIC_AUTH="\"test\"" \
-  -e NEW_LISSU_BASIC_AUTH="\"test\"" -e SAMOCAT_TOKEN_AUTH="\"test\"" \
-  -e LAHTI_BASIC_AUTH="\"test\"" -e HSL_RT_STORAGE_NAME=transitdataprod \
+  -e NEW_LISSU_BASIC_AUTH="\"test\"" -e LAHTI_BASIC_AUTH="\"test\"" -e HSL_RT_STORAGE_NAME=transitdataprod \
   -e MATKAHUOLTO_KAINUU_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_SAVO_BASIC_AUTH="\"test\"" \
   -e MATKAHUOLTO_KANTA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_KARJALA_BASIC_AUTH="\"test\"" \
   -e MATKAHUOLTO_KESKI_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_KYME_BASIC_AUTH="\"test\"" \
