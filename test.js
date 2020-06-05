@@ -174,6 +174,8 @@ describe('hsl ui', function() {
   testRedirect('next-dev.digitransit.fi','/kissa','https://next-dev.digitransit.fi/kissa');
   testProxying('next-dev.digitransit.fi','/','digitransit-ui-hsl-next:8080', true);
   testCaching('next-dev.digitransit.fi','/sw.js', true);
+  testProxying('uusi.reittiopas.fi','/','digitransit-ui-hsl-next:8080', true);
+  testProxying('uusi.reittiopas.hsl.fi','/','digitransit-ui-hsl-next:8080', true);
 
   testRedirect('vyohykereittiopas.hsl.fi','/kissa','https://reittiopas.hsl.fi/kissa');
 });
