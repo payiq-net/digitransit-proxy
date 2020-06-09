@@ -23,7 +23,7 @@ CONTAINER_ID=`docker run -d -p 9000:8080 $ADDHOSTS -e VILKKU_BASIC_AUTH="\"test\
   -e MATKAHUOLTO_LAPPI_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_POHJANMAA_BASIC_AUTH="\"test\"" \
   -e MATKAHUOLTO_SATAKUNTA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_VAKKA_BASIC_AUTH="\"test\"" \
   -e MATKAHUOLTO_VANTAA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_VARSINAIS_BASIC_AUTH="\"test\"" \
-  hsldevcom/digitransit-proxy:integrationtest`
+  -e HAMEENLINNA_BASIC_AUTH="\"test\"" hsldevcom/digitransit-proxy:integrationtest`
 
 curl -v http://127.0.0.1:9000
 
