@@ -119,6 +119,7 @@ describe('api.digitransit.fi', function() {
   testProxying('api.digitransit.fi','/realtime/raildigitraffic2gtfsrt/v1/','raildigitraffic2gtfsrt:8080');
  //testCaching('api.digitransit.fi','/realtime/raildigitraffic2gtfsrt/v1/foo',true);
   testProxying('api.digitransit.fi','/map/v1/','hsl-map-server:8080');
+  testProxying('api.digitransit.fi','/map/v1/hsl-map-next/index.json','hsl-map-server-next:8080/map/v1/hsl-map/index.json');
   testProxying('api.digitransit.fi','/routing/v1/routers/finland','opentripplanner-finland:8080');
   testProxying('api.digitransit.fi','/routing/v1/routers/hsl','opentripplanner-hsl:8080');
   testProxying('api.digitransit.fi','/routing/v1/routers/waltti','opentripplanner-waltti:8080');
@@ -145,8 +146,7 @@ describe('api.digitransit.fi', function() {
 });
 
 describe('hsl ui', function() {
-  testRedirect('www.beta.reittiopas.fi','/kissa','http://beta.reittiopas.fi/kissa');
-  testRedirect('api.digitransit.fi','/map/v1/hsl-map-next/index.json','/map/v1/hsl-map/index.json');
+  testRedirect('www.beta.reittiopas.fi','/kissa','http://beta.reittiopas.fi/kissa')
 
   testRedirect('reittiopas.fi','/kissa','https://reittiopas.hsl.fi/kissa');
   testRedirect('beta.reittiopas.fi','/kissa','https://reittiopas.hsl.fi/kissa', true);
