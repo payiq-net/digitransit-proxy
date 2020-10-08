@@ -7,10 +7,20 @@
 set -o errexit -o nounset -o xtrace
 
 ORG=${ORG:-hsldevcom}
-DOCKER_TAG=${TRAVIS_COMMIT:-latest}
-DOCKER_IMAGE=$ORG/digitransit-proxy:$DOCKER_TAG
-LATEST_IMAGE=$ORG/digitransit-proxy:latest
-PROD_IMAGE=$ORG/digitransit-proxy:prod
+DOCKER_IMAGE=$ORG/digitransit-proxy
+DOCKER_TAG="latest"
+
+
+if [ "$TRAVIS_TAG" ]; then
+  DOCKER_TAG="prod"
+elif [ "$TRAVIS_BRANCH" != "master" ]; then
+  DOCKER_TAG=$TRAVIS_BRANCH
+fi
+
+DOCKER_TAG_LONG=$DOCKER_TAG-$(date +"%Y-%m-%dT%H.%M.%S")-${TRAVIS_COMMIT:0:7}
+DOCKER_IMAGE_LATEST=$DOCKER_IMAGE:latest
+DOCKER_IMAGE_TAG=$DOCKER_IMAGE:$DOCKER_TAG
+DOCKER_IMAGE_TAG_LONG=$DOCKER_IMAGE:$DOCKER_TAG_LONG
 
 
 if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
@@ -18,26 +28,23 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
   if [ "$TRAVIS_TAG" ];then
     echo "processing release $TRAVIS_TAG"
     #release do not rebuild, just tag
-    docker pull $DOCKER_IMAGE
-    docker tag ${DOCKER_IMAGE} ${PROD_IMAGE}
-    docker push ${PROD_IMAGE}
+    docker pull $DOCKER_IMAGE_LATEST
+    docker tag $DOCKER_IMAGE_LATEST $DOCKER_IMAGE_TAG
+    docker tag $DOCKER_IMAGE_LATEST $DOCKER_IMAGE_TAG_LONG
+    docker push $DOCKER_IMAGE_TAG
+    docker push $DOCKER_IMAGE_TAG_LONG
   else
     ./test.sh
-    docker build  --tag=$DOCKER_IMAGE -f Dockerfile .
-    docker push ${DOCKER_IMAGE}
-    echo "processing $TRAVIS_BRANCH build $TRAVIS_COMMIT"
-    if [ "$TRAVIS_BRANCH" = "master" ]; then
-      docker tag ${DOCKER_IMAGE} ${LATEST_IMAGE}
-      docker push ${LATEST_IMAGE}
-    else
-      docker tag ${DOCKER_IMAGE} $ORG/digitransit-proxy:$TRAVIS_BRANCH
-      docker push $ORG/digitransit-proxy:$TRAVIS_BRANCH
-    fi
+    docker build  --tag=$DOCKER_IMAGE_TAG_LONG -f Dockerfile .
+    echo "Pushing $DOCKER_TAG image"
+    docker push $DOCKER_IMAGE_TAG_LONG
+    docker tag $DOCKER_IMAGE_TAG_LONG $DOCKER_IMAGE_TAG
+    docker push $DOCKER_IMAGE_TAG
   fi
 else
   echo "processing pr $TRAVIS_PULL_REQUEST"
   ./test.sh
-  docker build  --tag=$DOCKER_IMAGE -f Dockerfile .
+  docker build  --tag=$DOCKER_IMAGE_TAG_LONG -f Dockerfile .
 fi
 
 echo Build completed
