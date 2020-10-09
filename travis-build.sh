@@ -41,8 +41,6 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     docker push $DOCKER_IMAGE_TAG
     docker push $DOCKER_IMAGE_TAG_LONG
   else
-    ./test.sh
-    docker build  --tag=$DOCKER_IMAGE_TAG_LONG -f Dockerfile .
     echo "Pushing $DOCKER_TAG image"
     docker push $DOCKER_IMAGE_TAG_LONG
     docker tag $DOCKER_IMAGE_TAG_LONG $DOCKER_IMAGE_TAG
