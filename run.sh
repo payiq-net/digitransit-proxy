@@ -25,7 +25,7 @@ sed -i "s/MATKAHUOLTO_VAKKA_BASIC_AUTH/${MATKAHUOLTO_VAKKA_BASIC_AUTH}/" /etc/ng
 sed -i "s/MATKAHUOLTO_VANTAA_BASIC_AUTH/${MATKAHUOLTO_VANTAA_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/MATKAHUOLTO_VARSINAIS_BASIC_AUTH/${MATKAHUOLTO_VARSINAIS_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/HAMEENLINNA_BASIC_AUTH/${HAMEENLINNA_BASIC_AUTH}/" /etc/nginx/external.conf
-
+sed -i "s/dev.hslfi.hsldev.com/${NEW_HSL_FI_URL}/" /etc/nginx/nginx.conf
 
 
 #start nginx
