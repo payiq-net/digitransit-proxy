@@ -173,10 +173,13 @@ describe('hsl ui', function() {
   //next-dev site
   testRedirect('www.next-dev.digitransit.fi','/kissa','http://next-dev.digitransit.fi/kissa');
   testRedirect('next-dev.digitransit.fi','/kissa','https://next-dev.digitransit.fi/kissa');
-  testProxying('next-dev.digitransit.fi','/','digitransit-ui-hsl-next:8080', true);
+  testRedirect('next-dev.digitransit.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true', true);
+  testProxying('next-dev.digitransit.fi','/kissa','digitransit-ui-hsl-next:8080', true);
   testCaching('next-dev.digitransit.fi','/sw.js', true);
-  testProxying('uusi.reittiopas.fi','/','digitransit-ui-hsl-next:8080', true);
-  testProxying('uusi.reittiopas.hsl.fi','/','digitransit-ui-hsl-next:8080', true);
+  testRedirect('uusi.reittiopas.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true', true);
+  testProxying('uusi.reittiopas.fi','/kissa','digitransit-ui-hsl-next:8080', true);
+  testRedirect('uusi.reittiopas.hsl.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true', true);
+  testProxying('uusi.reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-next:8080', true);
 
   testRedirect('vyohykereittiopas.hsl.fi','/kissa','https://reittiopas.hsl.fi/kissa');
 });
