@@ -165,6 +165,7 @@ describe('hsl ui', function() {
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
   testProxying('vanha.reittiopas.hsl.fi','/','digitransit-ui-hsl:8080', true);
+  testResponseHeader('vanha.reittiopas.hsl.fi','/kissa', 'x-robots-tag', 'noindex, nofollow, nosnippet, noarchive');
 
   //next-dev site
   testRedirect('www.next-dev.digitransit.fi','/kissa','http://next-dev.digitransit.fi/kissa');
