@@ -167,6 +167,8 @@ describe('hsl ui', function() {
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
+  testProxying('vanha.reittiopas.hsl.fi','/','digitransit-ui-hsl:8080', true);
+
   testRedirect('reittiopas.hsl.fi','/uudetvyohykkeet','https://reittiopas.hsl.fi', true);
   testRedirect('reittiopas.hsl.fi','/uudetvyöhykkeet','https://reittiopas.hsl.fi', true);
 
