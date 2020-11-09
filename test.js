@@ -159,8 +159,10 @@ describe('hsl ui', function() {
   });
 
   testProxying('dev.reittiopas.fi','/','digitransit-ui-hsl:8080', true);
+  testResponseHeader('dev.reittiopas.fi','/kissa', 'x-robots-tag', 'noindex, nofollow, nosnippet, noarchive');
 
-  testProxying('reittiopas.hsl.fi','/','digitransit-ui-hsl:8080', true);
+  testRedirect('reittiopas.hsl.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true', true);
+  testProxying('reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-next:8080', true);
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
