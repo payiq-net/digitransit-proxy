@@ -207,7 +207,7 @@ describe('waltti ui', function() {
     testRedirect('dev-'+city+'.digitransit.fi','/kissa','https://dev-'+city+'.digitransit.fi/kissa');
     testProxying('dev-'+city+'.digitransit.fi','/','digitransit-ui-waltti:8080', true);
     testRedirect('next-dev-'+city+'.digitransit.fi','/kissa','https://next-dev-'+city+'.digitransit.fi/kissa');
-    testProxying('next-dev-'+city+'.digitransit.fi','/','digitransit-ui-waltti:8080', true);
+    testProxying('next-dev-'+city+'.digitransit.fi','/','digitransit-ui-waltti-next:8080', true);
     testRedirect(city+'.digitransit.fi','/kissa','https://'+city+'.digitransit.fi/kissa');
     testProxying(city+'.digitransit.fi','/','digitransit-ui-waltti:8080', true);
   });
@@ -232,7 +232,7 @@ describe('waltti ui', function() {
   testProxying('opas.waltti.fi','/','digitransit-ui-waltti:8080', true);
 
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
-  testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti:8080', true);
+  testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
 
   it('https should not redirect', function(done) {
     httpsGet('turku.digitransit.fi','/kissa').end((err,res)=>{
