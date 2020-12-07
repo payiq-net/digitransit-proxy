@@ -228,6 +228,12 @@ describe('waltti ui', function() {
   testProxying('reittiopas.tampere.fi','/','digitransit-ui-waltti:8080', true);
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
+  testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
+  testProxying('opas.waltti.fi','/','digitransit-ui-waltti:8080', true);
+
+  testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
+  testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti:8080', true);
+
   it('https should not redirect', function(done) {
     httpsGet('turku.digitransit.fi','/kissa').end((err,res)=>{
       expect(err).to.be.null;
