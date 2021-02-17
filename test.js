@@ -248,15 +248,6 @@ describe('sentry-analytics', function() {
   testRedirect('sentry-analytics.digitransit.fi','/kissa','https://sentry-analytics.digitransit.fi/kissa');
 });
 
-describe('yleisviestipalvelu', function() {
-  testCaching('yleisviesti.hsl.fi','/', true);
-  testProxying('yleisviesti.hsl.fi','/','yleisviestipalvelu:8080', true);
-  testRedirect('yleisviesti.hsl.fi','/kissa','https://yleisviesti.hsl.fi/kissa');
-  testCaching('dev-yleisviesti.digitransit.fi','/', true);
-  testProxying('dev-yleisviesti.digitransit.fi','/','yleisviestipalvelu:8080', true);
-  testRedirect('dev-yleisviesti.digitransit.fi','/kissa','https://dev-yleisviesti.digitransit.fi/kissa');
-});
-
 describe('digitransit', function() {
   testProxying('digitransit.fi','/','digitransit-site:8080', true);
 });
