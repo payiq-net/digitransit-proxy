@@ -235,6 +235,9 @@ describe('waltti ui', function() {
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
   testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
 
+  testRedirect('linjasto2021.digitransit.fi','/kissa','https://linjasto2021.digitransit.fi/kissa');
+  testProxying('linjasto2021.digitransit.fi','/','digitransit-ui-waltti:8080', true);
+
   it('https should not redirect', function(done) {
     httpsGet('turku.digitransit.fi','/kissa').end((err,res)=>{
       expect(err).to.be.null;
