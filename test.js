@@ -202,7 +202,7 @@ describe('matka ui', function() {
 
 describe('waltti ui', function() {
   const cities = ['hameenlinna', 'jyvaskyla', 'joensuu', 'kotka', 'kuopio', 'lahti',
-                  'lappeenranta', 'mikkeli', 'oulu', 'turku', 'tampere', 'kouvola', 'rovaniemi', 'linjasto2021'];
+                  'lappeenranta', 'mikkeli', 'oulu', 'turku', 'tampere', 'kouvola', 'rovaniemi'];
 
   cities.forEach(function(city) {
     testRedirect('dev-'+city+'.digitransit.fi','/kissa','https://dev-'+city+'.digitransit.fi/kissa');
@@ -234,6 +234,9 @@ describe('waltti ui', function() {
 
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
   testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
+
+  testRedirect('linjasto2021.digitransit.fi','/kissa','https://linjasto2021.digitransit.fi/kissa');
+  testProxying('linjasto2021.digitransit.fi','/','digitransit-ui-waltti:8080', true);
 
   it('https should not redirect', function(done) {
     httpsGet('turku.digitransit.fi','/kissa').end((err,res)=>{
