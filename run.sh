@@ -28,7 +28,7 @@ sed -i "s/HAMEENLINNA_BASIC_AUTH/${HAMEENLINNA_BASIC_AUTH}/" /etc/nginx/external
 sed -i "s/dev.hslfi.hsldev.com/${NEW_HSL_FI_URL}/" /etc/nginx/nginx.conf
 sed -i "s/LMJ_BASIC_AUTH/${LMJ_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/MIKKELI_BASIC_AUTH/${MIKKELI_BASIC_AUTH}/" /etc/nginx/external.conf
-
+sed -i "s/VAASA_BASIC_AUTH/${VAASA_BASIC_AUTH}/" /etc/nginx/external.conf
 
 #start nginx
 nginx
