@@ -202,7 +202,7 @@ describe('matka ui', function() {
 
 describe('waltti ui', function() {
   const legacyUICities = ['hameenlinna', 'joensuu', 'kotka', 'lahti',
-                  'lappeenranta', 'oulu', 'kouvola', 'rovaniemi'];
+                  'lappeenranta', 'oulu', 'kouvola', 'rovaniemi', 'vaasa'];
 
   const newUICities = ['jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere'];
 
