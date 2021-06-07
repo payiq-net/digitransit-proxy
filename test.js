@@ -201,10 +201,12 @@ describe('matka ui', function() {
 });
 
 describe('waltti ui', function() {
-  const legacyUICities = ['hameenlinna', 'joensuu', 'kotka', 'lahti',
-                  'lappeenranta', 'oulu', 'kouvola', 'rovaniemi'];
+  const legacyUICities = ['oulu', 'rovaniemi'];
 
-  const newUICities = ['jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa'];
+  const newUICities = [
+    'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna',
+    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola'
+  ];
 
   legacyUICities.forEach(function(city) {
     testRedirect('dev-'+city+'.digitransit.fi','/kissa','https://dev-'+city+'.digitransit.fi/kissa');
@@ -228,7 +230,7 @@ describe('waltti ui', function() {
   testProxying('reittiopas.foli.fi','/','digitransit-ui-waltti-next:8080', true);
 
   testRedirect('reittiopas.hameenlinna.fi','/kissa','https://reittiopas.hameenlinna.fi/kissa');
-  testProxying('reittiopas.hameenlinna.fi','/','digitransit-ui-waltti:8080', true);
+  testProxying('reittiopas.hameenlinna.fi','/','digitransit-ui-waltti-next:8080', true);
 
   testRedirect('repa.tampere.fi','/kissa','https://repa.tampere.fi/kissa');
   testProxying('repa.tampere.fi','/','digitransit-ui-waltti-next:8080', true);
