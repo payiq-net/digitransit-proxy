@@ -201,9 +201,12 @@ describe('matka ui', function() {
 });
 
 describe('waltti ui', function() {
-  const legacyUICities = ['kotka', 'lahti', 'lappeenranta', 'kouvola', 'rovaniemi'];
+  const legacyUICities = ['oulu', 'rovaniemi'];
 
-  const newUICities = ['jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna', 'joensuu', 'oulu'];
+  const newUICities = [
+    'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna',
+    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola'
+  ];
 
   legacyUICities.forEach(function(city) {
     testRedirect('dev-'+city+'.digitransit.fi','/kissa','https://dev-'+city+'.digitransit.fi/kissa');
