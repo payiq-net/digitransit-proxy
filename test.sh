@@ -25,7 +25,7 @@ CONTAINER_ID=`docker run -d -p 9000:8080 $ADDHOSTS -e VILKKU_BASIC_AUTH="\"test\
   -e MATKAHUOLTO_VANTAA_BASIC_AUTH="\"test\"" -e MATKAHUOLTO_VARSINAIS_BASIC_AUTH="\"test\"" \
   -e HAMEENLINNA_BASIC_AUTH="\"test\"" -e NEW_HSL_FI_URL=uusi.hsl.fi \
   -e LMJ_BASIC_AUTH="\"test\"" -e MIKKELI_BASIC_AUTH="\"test\"" \
-  -e VAASA_BASIC_AUTH="\"test\"" hsldevcom/digitransit-proxy:integrationtest`
+  -e VAASA_BASIC_AUTH="\"test\"" -e SALO_BASIC_AUTH="\"test\"" hsldevcom/digitransit-proxy:integrationtest`
 
 curl -v http://127.0.0.1:9000
 
@@ -35,7 +35,7 @@ echo starting echo server...
 node test_server.js &
 PID=$!
 
-sleep 5
+sleep 10
 
 mocha
 STATUS=$?
