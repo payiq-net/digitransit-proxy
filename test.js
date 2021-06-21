@@ -201,11 +201,11 @@ describe('matka ui', function() {
 });
 
 describe('waltti ui', function() {
-  const legacyUICities = ['oulu', 'rovaniemi'];
+  const legacyUICities = ['rovaniemi'];
 
   const newUICities = [
     'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna',
-    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola'
+    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola','oulu'
   ];
 
   legacyUICities.forEach(function(city) {
@@ -240,7 +240,7 @@ describe('waltti ui', function() {
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
   testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
-  testProxying('opas.waltti.fi','/','digitransit-ui-waltti:8080', true);
+  testProxying('opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
 
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
   testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
