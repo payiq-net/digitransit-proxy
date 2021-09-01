@@ -31,6 +31,7 @@ sed -i "s/MIKKELI_BASIC_AUTH/${MIKKELI_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/VAASA_BASIC_AUTH/${VAASA_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/SALO_BASIC_AUTH/${SALO_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/KOUVOLA_BASIC_AUTH/${KOUVOLA_BASIC_AUTH}/" /etc/nginx/external.conf
+sed -i "s/PERILLE_BASIC_AUTH/${PERILLE_BASIC_AUTH}/" /etc/nginx/external.conf
 
 #start nginx
 nginx
