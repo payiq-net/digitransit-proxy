@@ -201,10 +201,12 @@ describe('matka ui', function() {
 });
 
 describe('waltti ui', function() {
-  const legacyUICities = ['hameenlinna', 'joensuu', 'kotka', 'lahti',
-                  'lappeenranta', 'oulu', 'kouvola', 'rovaniemi'];
+  const legacyUICities = ['rovaniemi'];
 
-  const newUICities = ['jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere'];
+  const newUICities = [
+    'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna',
+    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola','oulu'
+  ];
 
   legacyUICities.forEach(function(city) {
     testRedirect('dev-'+city+'.digitransit.fi','/kissa','https://dev-'+city+'.digitransit.fi/kissa');
@@ -228,7 +230,7 @@ describe('waltti ui', function() {
   testProxying('reittiopas.foli.fi','/','digitransit-ui-waltti-next:8080', true);
 
   testRedirect('reittiopas.hameenlinna.fi','/kissa','https://reittiopas.hameenlinna.fi/kissa');
-  testProxying('reittiopas.hameenlinna.fi','/','digitransit-ui-waltti:8080', true);
+  testProxying('reittiopas.hameenlinna.fi','/','digitransit-ui-waltti-next:8080', true);
 
   testRedirect('repa.tampere.fi','/kissa','https://repa.tampere.fi/kissa');
   testProxying('repa.tampere.fi','/','digitransit-ui-waltti-next:8080', true);
@@ -238,7 +240,7 @@ describe('waltti ui', function() {
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
   testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
-  testProxying('opas.waltti.fi','/','digitransit-ui-waltti:8080', true);
+  testProxying('opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
 
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
   testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
@@ -252,8 +254,7 @@ describe('waltti ui', function() {
 });
 
 describe('linjasto2021 ui', function() {
-  testRedirect('linjasto2021.digitransit.fi','/kissa','https://linjasto2021.digitransit.fi/kissa');
-  testProxying('linjasto2021.digitransit.fi','/','digitransit-ui-linjasto2021:8080', true);
+  testRedirect('linjasto2021.digitransit.fi','/kissa','https://reittiopas.tampere.fi');
 });
 
 describe('sentry-analytics', function() {

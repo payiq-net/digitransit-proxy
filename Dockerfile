@@ -1,4 +1,4 @@
-FROM nginx:1.18-alpine
+FROM nginx:1.20-alpine
 MAINTAINER Reittiopas version: 0.1
 ENV INSTALL_DIR="/opt/nginx"
 
