@@ -201,7 +201,7 @@ describe('matka ui', function() {
 describe('waltti ui', function() {
   const walttiCities = [
     'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna',
-    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola','oulu'
+    'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola','oulu', 'rovaniemi'
   ];
 
   walttiCities.forEach(function(city) {
