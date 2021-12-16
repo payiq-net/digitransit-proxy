@@ -152,6 +152,8 @@ describe('hsl ui', function() {
   testRedirect('reittiopas.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true');
   testRedirect('www.reittiopas.fi','/kissa','https://reittiopas.hsl.fi/kissa', true);
   testResponseHeader('www.reittiopas.fi','/', 'x-robots-tag', 'noindex, nofollow, nosnippet, noarchive');
+  testRedirect('reittiopas.fi','/haku','https://reittiopas.hsl.fi/haku');
+  testResponseHeader('www.reittiopas.fi','/haku', 'X-Frame-Options', undefined);
   testRedirect('m.reittiopas.fi','/kissa','https://reittiopas.hsl.fi/kissa');
   testRedirect('dev.reittiopas.fi','/kissa','https://dev.reittiopas.fi/kissa');
 
@@ -229,6 +231,9 @@ describe('waltti ui', function() {
 
   testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
   testProxying('opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
+
+  testRedirect('opas.waltti.fi','/haku','https://opas.waltti.fi/haku');
+  testResponseHeader('opas.waltti.fi','/haku', 'X-Frame-Options', undefined);
 
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
   testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-next:8080', true);
