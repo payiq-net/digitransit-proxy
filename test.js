@@ -159,7 +159,7 @@ describe('api.digitransit.fi', function() {
 
 describe('hsl ui', function() {
   testRedirect('reittiopas.fi','/kissa','https://reittiopas.hsl.fi/kissa');
-  testRedirect('reittiopas.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true');
+  testRedirect('reittiopas.fi','/','https://hsl.fi/?fromJourneyPlanner=true');
   testRedirect('www.reittiopas.fi','/kissa','https://reittiopas.hsl.fi/kissa', true);
   testResponseHeader('www.reittiopas.fi','/', 'x-robots-tag', 'noindex, nofollow, nosnippet, noarchive');
   testRedirect('reittiopas.fi','/haku','https://reittiopas.hsl.fi/haku');
@@ -175,7 +175,7 @@ describe('hsl ui', function() {
 
   testProxying('dev.reittiopas.fi','/etusivu','digitransit-ui-hsl-v2:8080', true);
 
-  testRedirect('reittiopas.hsl.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true', true);
+  testRedirect('reittiopas.hsl.fi','/','https://hsl.fi/?fromJourneyPlanner=true', true);
   testProxying('reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-v2:8080', true);
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
@@ -183,7 +183,6 @@ describe('hsl ui', function() {
   //next-dev site
   testRedirect('www.next-dev.digitransit.fi','/kissa','http://next-dev.digitransit.fi/kissa');
   testRedirect('next-dev.digitransit.fi','/kissa','https://next-dev.digitransit.fi/kissa');
-  testRedirect('next-dev.digitransit.fi','/','https://uusi.hsl.fi/?fromJourneyPlanner=true', true);
   testProxying('next-dev.digitransit.fi','/kissa','digitransit-ui-hsl-v3:8080', true);
   testCaching('next-dev.digitransit.fi','/sw.js', true);
 });
