@@ -257,6 +257,15 @@ describe('sentry-analytics', function() {
   testRedirect('sentry-analytics.digitransit.fi','/kissa','https://sentry-analytics.digitransit.fi/kissa');
 });
 
+describe('yleisviestipalvelu', function() {
+  testCaching('matka-yleisviesti.digitransit.fi','/', true);
+  testProxying('matka-yleisviesti.digitransit.fi','/','yleisviestipalvelu:8080', true);
+  testRedirect('matka-yleisviesti.digitransit.fi','/kissa','https://matka-yleisviesti.digitransit.fi/kissa');
+  testCaching('dev-matka-yleisviesti.digitransit.fi','/', true);
+  testProxying('dev-matka-yleisviesti.digitransit.fi','/','yleisviestipalvelu:8080', true);
+  testRedirect('dev-matka-yleisviesti.digitransit.fi','/kissa','https://dev-matka-yleisviesti.digitransit.fi/kissa');
+});
+
 describe('digitransit', function() {
   testProxying('digitransit.fi','/','digitransit-site:8080', true);
 });
