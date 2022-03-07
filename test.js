@@ -178,8 +178,9 @@ describe('hsl ui', function() {
 
   testRedirect('reittiopas.hsl.fi','/','https://hsl.fi/?fromJourneyPlanner=true', true);
   testProxying('reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-v2:8080', true);
-;
-  testProxying('apim-test-hsl.digitransit.fi','/kissa','digitransit-ui-apim-test:8080', true);
+
+  testRedirect('apim-test-hsl.digitransit.fi','/','https://hsl.fi/?fromJourneyPlanner=true', true);
+  testProxying('apim-test-hsl.digitransit.fi','/kissa','digitransit-ui-hsl-v2:8080', true);
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
