@@ -109,7 +109,6 @@ describe('api.digitransit.fi', function() {
     });
   });
 
-  testProxying('dev-next-api.digitransit.fi','/geocoding/v1/','pelias-api:8080');
   testProxying('api.digitransit.fi','/geocoding/v1/','pelias-api:8080');
   //testCaching('api.digitransit.fi','/geocoding/v1/foo', true);
   testProxying('api.digitransit.fi','/graphiql/hsl','graphiql:8080');
@@ -178,8 +177,6 @@ describe('hsl ui', function() {
 
   testRedirect('reittiopas.hsl.fi','/','https://hsl.fi/?fromJourneyPlanner=true', true);
   testProxying('reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-v2:8080', true);
-;
-  testProxying('apim-test-hsl.digitransit.fi','/kissa','digitransit-ui-apim-test:8080', true);
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
