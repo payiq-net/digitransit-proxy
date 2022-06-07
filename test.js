@@ -270,6 +270,13 @@ describe('digitransit', function() {
   testProxying('digitransit.fi','/','digitransit-site:8080', true);
 });
 
+describe('otp debug', function() {
+  testProxying('hsl-debug.digitransit.fi','/','opentripplanner-hsl-v2:8080', true);
+  testProxying('waltti-debug.digitransit.fi','/','opentripplanner-waltti-v2:8080', true);
+  testProxying('finland-debug.digitransit.fi','/','opentripplanner-finland-v2:8080', true);
+  testProxying('waltti-alt-debug.digitransit.fi','/','opentripplanner-waltti-alt-v2:8080', true);
+});
+
 describe('ext-proxy', function() {
   this.timeout(5000);
   testCaching('api.digitransit.fi','/out/helsinki-fi.smoove.pro/api-public/stations',false);
