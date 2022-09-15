@@ -228,7 +228,7 @@ describe('waltti ui', function() {
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
   testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
-  testProxying('opas.waltti.fi','/','digitransit-ui-waltti-v2:8080', true);
+  testProxying('opas.waltti.fi','/','digitransit-ui-waltti-v3:8080', true);
 
   testRedirect('opas.waltti.fi','/haku','https://opas.waltti.fi/haku');
   testResponseHeader('opas.waltti.fi','/haku', 'X-Frame-Options', undefined);
