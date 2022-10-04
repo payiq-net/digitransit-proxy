@@ -22,6 +22,7 @@ sed -i "s/KOUVOLA_BASIC_AUTH/${KOUVOLA_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/PERILLE_BASIC_AUTH/${PERILLE_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/GIRAVOLTA_TAMPERE_AUTH/${GIRAVOLTA_TAMPERE_AUTH}/" /etc/nginx/external.conf
 sed -i "s/KOTKA_BASIC_AUTH/${KOTKA_BASIC_AUTH}/" /etc/nginx/external.conf
+sed -i "s/ROVANIEMI_BASIC_AUTH/${ROVANIEMI_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/GIRAVOLTA_VANTAA_AUTH/${GIRAVOLTA_VANTAA_AUTH}/" /etc/nginx/external.conf
 sed -i "s/VARELY_BASIC_AUTH/${VARELY_BASIC_AUTH}/" /etc/nginx/external.conf
 
