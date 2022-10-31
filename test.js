@@ -121,12 +121,12 @@ describe('api.digitransit.fi', function() {
   testProxying('api.digitransit.fi','/map/v1/','hsl-map-server:8080');
   testProxying('api.digitransit.fi','/map/v2/','hsl-map-server:8080');
   testProxying('api.digitransit.fi','/map/v3/hsl-map/','hsl-map-server:8080');
-  testProxying('api.digitransit.fi','/map/v3/hsl-ticket-sales-map/','hsl-map-server:8080');
-  testProxying('api.digitransit.fi','/map/v3/hsl-rental-stations/','opentripplanner-hsl-v2:8080');
-  testProxying('api.digitransit.fi','/map/v3/waltti-rental-stations/','opentripplanner-waltti-v2:8080');
-  testProxying('api.digitransit.fi','/map/v3/finland-rental-stations/','opentripplanner-finland-v2:8080');
-  testProxying('api.digitransit.fi','/map/v3/varely-stops/','opentripplanner-varely-v2:8080');
-  testProxying('api.digitransit.fi','/map/v3/waltti-alt-rental-stations/','opentripplanner-waltti-alt-v2:8080');
+  testProxying('api.digitransit.fi','/map/v3/hsl/ticket-sales-map/','hsl-map-server:8080');
+  testProxying('api.digitransit.fi','/map/v3/hsl/rental-stations/','opentripplanner-hsl-v2:8080');
+  testProxying('api.digitransit.fi','/map/v3/waltti/rental-stations/','opentripplanner-waltti-v2:8080');
+  testProxying('api.digitransit.fi','/map/v3/finland/rental-stations/','opentripplanner-finland-v2:8080');
+  testProxying('api.digitransit.fi','/map/v3/varely/stops,stations/','opentripplanner-varely-v2:8080');
+  testProxying('api.digitransit.fi','/map/v3/waltti-alt/rental-stations/','opentripplanner-waltti-alt-v2:8080');
   testProxying('api.digitransit.fi','/routing/v1/routers/finland','opentripplanner-finland:8080');
   testProxying('api.digitransit.fi','/routing/v1/routers/hsl','opentripplanner-hsl:8080');
   testProxying('api.digitransit.fi','/routing/v1/routers/waltti','opentripplanner-waltti:8080');
