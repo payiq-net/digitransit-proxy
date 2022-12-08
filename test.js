@@ -110,7 +110,9 @@ describe('api.digitransit.fi', function() {
   });
 
   testProxying('api.digitransit.fi','/geocoding/v1/','pelias-api:8080');
-  //testCaching('api.digitransit.fi','/geocoding/v1/foo', true);
+  testCaching('api.digitransit.fi','/geocoding/v1/search?digitransit-subscription-key=1234567890&text=porin%20tori', true);
+  testCaching('api.digitransit.fi', '/geocoding/v1/reverse?digitransit-subscription-key=1234567890&point.lat=60.199284&point.lon=24.940540&size=1', true)
+  testCaching('api.digitransit.fi', '/geocoding/v1/autocomplete?digitransit-subscription-key=1234567890&text=kamp&layers=address', true)
   testProxying('api.digitransit.fi','/graphiql/hsl','graphiql:8080');
   testProxying('api.digitransit.fi','/realtime/trip-updates/v1/FOLI','siri2gtfsrt:8080');
   //testCaching('api.digitransit.fi','/realtime/trip-updates/v1/foo', false)
