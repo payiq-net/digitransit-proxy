@@ -252,16 +252,6 @@ describe('waltti ui', function() {
     });
   });
 });
-
-describe('linjasto2021 ui', function() {
-  testRedirect('linjasto2021.digitransit.fi','/kissa','https://reittiopas.tampere.fi');
-});
-
-describe('sentry-analytics', function() {
-  testProxying('sentry-analytics.digitransit.fi','/','digitransit-sentry-analytics:8080', true);
-  testRedirect('sentry-analytics.digitransit.fi','/kissa','https://sentry-analytics.digitransit.fi/kissa');
-});
-
 describe('yleisviestipalvelu', function() {
   testCaching('matka-yleisviesti.digitransit.fi','/', true);
   testProxying('matka-yleisviesti.digitransit.fi','/','yleisviestipalvelu:8080', true);
