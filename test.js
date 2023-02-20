@@ -230,10 +230,10 @@ describe('waltti ui', function() {
   testProxying('reittiopas.hameenlinna.fi','/','digitransit-ui-waltti-v2:8080', true);
 
   testRedirect('repa.tampere.fi','/kissa','https://repa.tampere.fi/kissa');
-  testProxying('repa.tampere.fi','/','digitransit-ui-waltti-v2:8080', true);
+  testProxying('repa.tampere.fi','/','digitransit-ui-waltti-v3:8080', true);
 
   testRedirect('reittiopas.tampere.fi','/kissa','https://reittiopas.tampere.fi/kissa');
-  testProxying('reittiopas.tampere.fi','/','digitransit-ui-waltti-v2:8080', true);
+  testProxying('reittiopas.tampere.fi','/','digitransit-ui-waltti-v3:8080', true);
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
   testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
