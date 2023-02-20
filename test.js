@@ -210,7 +210,7 @@ describe('matka ui', function() {
 
 describe('waltti ui', function() {
   const walttiCities = [
-    'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'tampere', 'vaasa', 'hameenlinna',
+    'jyvaskyla', 'kuopio', 'mikkeli', 'turku', 'vaasa', 'hameenlinna',
     'joensuu', 'kotka', 'lahti', 'lappeenranta', 'kouvola','oulu', 'rovaniemi'
   ];
 
@@ -230,10 +230,10 @@ describe('waltti ui', function() {
   testProxying('reittiopas.hameenlinna.fi','/','digitransit-ui-waltti-v2:8080', true);
 
   testRedirect('repa.tampere.fi','/kissa','https://repa.tampere.fi/kissa');
-  testProxying('repa.tampere.fi','/','digitransit-ui-waltti-v2:8080', true);
+  testProxying('repa.tampere.fi','/','digitransit-ui-waltti-v3:8080', true);
 
   testRedirect('reittiopas.tampere.fi','/kissa','https://reittiopas.tampere.fi/kissa');
-  testProxying('reittiopas.tampere.fi','/','digitransit-ui-waltti-v2:8080', true);
+  testProxying('reittiopas.tampere.fi','/','digitransit-ui-waltti-v3:8080', true);
   testCaching('reittiopas.tampere.fi','/sw.js', true);
 
   testRedirect('opas.waltti.fi','/kissa','https://opas.waltti.fi/kissa');
@@ -278,6 +278,5 @@ describe('ext-proxy', function() {
   testCaching('api.digitransit.fi','/out/data.foli.fi/citybike/smoove',false);
   testCaching('api.digitransit.fi','/out/p.hsl.fi/api/v1/facilities.json?limit=-1',false);
   testCaching('api.digitransit.fi','/out/92.62.36.215/RTIX/trip-updates',false);
-  testCaching('api.digitransit.fi','/out/tyokalu.navici.com/joukkoliikenne/manual-gtfsrt/api/gtfsrt/alerts',false);
   testCaching('api.digitransit.fi','/out/stables.donkey.bike/api/public/gbfs/2/donkey_lappeenranta/en/station_status.json',false);
 });
