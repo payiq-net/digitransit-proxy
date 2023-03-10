@@ -181,7 +181,7 @@ describe('hsl ui', function() {
   testProxying('dev.reittiopas.fi','/etusivu','digitransit-ui-hsl-v2:8080', true);
 
   testRedirect('reittiopas.hsl.fi','/','https://hsl.fi/?fromJourneyPlanner=true', true);
-  testProxying('reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-v2:8080', true);
+  testProxying('reittiopas.hsl.fi','/kissa','digitransit-ui-hsl-v3:8080', true);
 
   testCaching('reittiopas.hsl.fi','/sw.js', true);
 
