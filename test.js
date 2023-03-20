@@ -196,7 +196,7 @@ describe('matka ui', function() {
   testRedirect('www.opas.matka.fi','/kissa','http://opas.matka.fi/kissa');
   testRedirect('opas.matka.fi','/kissa','https://opas.matka.fi/kissa');
 
-  testProxying('opas.matka.fi','/','digitransit-ui-matka-v2:8080', true);
+  testProxying('opas.matka.fi','/','digitransit-ui-matka-v3:8080', true);
 
   testCaching('opas.matka.fi','/sw.js', true);
 
