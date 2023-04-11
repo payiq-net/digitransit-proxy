@@ -10,7 +10,6 @@ sed -i "s/JOJO_BASIC_AUTH/${JOJO_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/LAPPEENRANTA_BASIC_AUTH/${LAPPEENRANTA_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/LINKKI_BASIC_AUTH/${LINKKI_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/NEW_LISSU_BASIC_AUTH/${NEW_LISSU_BASIC_AUTH}/" /etc/nginx/external.conf
-sed -i "s/transitdatadev/${HSL_RT_STORAGE_NAME}/" /etc/nginx/common.conf
 sed -i "s/LAHTI_BASIC_AUTH/${LAHTI_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/HAMEENLINNA_BASIC_AUTH/${HAMEENLINNA_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/test.hslfi.hsldev.com/${NEW_HSL_FI_URL}/" /etc/nginx/nginx.conf
