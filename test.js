@@ -145,12 +145,9 @@ describe('api.digitransit.fi', function() {
   testResponseHeader('dev-api.digitransit.fi','/routing-data/v3/waltti-alt/router-config.json', 'access-control-allow-origin', '*');
   testProxying('dev-api.digitransit.fi','/routing-data/v3/finland/router-finland.zip','opentripplanner-data-con-finland-v3:8080');
   testResponseHeader('dev-api.digitransit.fi','/routing-data/v3/finland/router-config.json', 'access-control-allow-origin', '*');
-  testProxying('api.digitransit.fi','/ui/v1/finland/sw.js','digitransit-ui-matka-v2:8080');
-  testProxying('api.digitransit.fi','/ui/v1/hsl-next/sw.js','digitransit-ui-hsl-v2:8080');
-  testProxying('api.digitransit.fi','/ui/v1/waltti-next/sw.js','digitransit-ui-waltti-v2:8080');
-  testProxying('api.digitransit.fi','/ui/v2/matka/sw.js','digitransit-ui-matka-v2:8080');
-  testProxying('api.digitransit.fi','/ui/v2/hsl/sw.js','digitransit-ui-hsl-v2:8080');
-  testProxying('api.digitransit.fi','/ui/v2/waltti/sw.js','digitransit-ui-waltti-v2:8080');
+  testProxying('api.digitransit.fi','/ui/v3/matka/sw.js','digitransit-ui-matka-v3:8080');
+  testProxying('api.digitransit.fi','/ui/v3/hsl/sw.js','digitransit-ui-hsl-v3:8080');
+  testProxying('api.digitransit.fi','/ui/v3/waltti/sw.js','digitransit-ui-waltti-v3:8080');
   testProxying('api.digitransit.fi','/ui/v3/matka/sw.js','digitransit-ui-matka-v3:8080');
   testProxying('api.digitransit.fi','/ui/v3/hsl/sw.js','digitransit-ui-hsl-v3:8080');
   testProxying('api.digitransit.fi','/ui/v3/waltti/sw.js','digitransit-ui-waltti-v3:8080');
@@ -210,8 +207,8 @@ describe('waltti ui', function() {
   ];
 
   walttiCities.forEach(function(city) {
-    testRedirect('dev-'+city+'.digitransit.fi','/kissa','https://dev-'+city+'.digitransit.fi/kissa');
-    testProxying('dev-'+city+'.digitransit.fi','/','digitransit-ui-waltti-v2:8080', true);
+    testRedirect('next-dev-'+city+'.digitransit.fi','/kissa','https://next-dev-'+city+'.digitransit.fi/kissa');
+    testProxying('next-dev-'+city+'.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
     testRedirect('next-dev-'+city+'.digitransit.fi','/kissa','https://next-dev-'+city+'.digitransit.fi/kissa');
     testProxying('next-dev-'+city+'.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
     testRedirect(city+'.digitransit.fi','/kissa','https://'+city+'.digitransit.fi/kissa');
