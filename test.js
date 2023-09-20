@@ -239,7 +239,7 @@ describe('waltti ui', function() {
 
   testRedirect('dev-raasepori.digitransit.fi','/kissa','https://dev-raasepori.digitransit.fi/kissa');
   testProxying('dev-raasepori.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
-  testRedirect('next-dev-raasepori.digitransit.fi','/kissa','next-dev-raasepori.digitransit.fi');
+  testRedirect('next-dev-raasepori.digitransit.fi','/kissa','https://next-dev-raasepori.digitransit.fi/kissa');
   testProxying('next-dev-raasepori.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
   testRedirect('bosse.digitransit.fi','/kissa','https://bosse.digitransit.fi/kissa');
   testProxying('bosse.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
