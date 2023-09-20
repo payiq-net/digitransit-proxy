@@ -203,7 +203,7 @@ describe('matka ui', function() {
 describe('waltti ui', function() {
   const walttiCities = [
     'hameenlinna', 'joensuu', 'jyvaskyla', 'kotka', 'kuopio', 'lahti', 'lappeenranta',
-    'mikkeli', 'oulu', 'turku', 'tampere','kouvola', 'rovaniemi','vaasa','raasepori'
+    'mikkeli', 'oulu', 'turku', 'tampere','kouvola', 'rovaniemi','vaasa'
   ];
 
   walttiCities.forEach(function(city) {
@@ -237,6 +237,10 @@ describe('waltti ui', function() {
   testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
   testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-v3:8080', true);
 
+  testRedirect('dev-raasepori.digitransit.fi','/kissa','https://dev-raasepori.digitransit.fi/kissa');
+  testProxying('dev-raasepori.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
+  testRedirect('next-dev-raasepori.digitransit.fi','/kissa','next-dev-raasepori.digitransit.fi');
+  testProxying('next-dev-raasepori.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
   testRedirect('bosse.digitransit.fi','/kissa','https://bosse.digitransit.fi/kissa');
   testProxying('bosse.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
 
