@@ -24,6 +24,7 @@ sed -i "s/ROVANIEMI_BASIC_AUTH/${ROVANIEMI_BASIC_AUTH}/" /etc/nginx/external.con
 sed -i "s/KAJAANI_BASIC_AUTH/${KAJAANI_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/GIRAVOLTA_VANTAA_AUTH/${GIRAVOLTA_VANTAA_AUTH}/" /etc/nginx/external.conf
 sed -i "s/VARELY_BASIC_AUTH/${VARELY_BASIC_AUTH}/" /etc/nginx/external.conf
+sed -i "s/VARELY_RT_BASIC_AUTH/${VARELY_RT_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/RAUMA_RT_BASIC_AUTH/${RAUMA_RT_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/RAUMA_STATIC_BASIC_AUTH/${RAUMA_STATIC_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/OULU_RT_BASIC_AUTH/${OULU_RT_BASIC_AUTH}/" /etc/nginx/external.conf
