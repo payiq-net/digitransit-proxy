@@ -234,8 +234,8 @@ describe('waltti ui', function() {
   testRedirect('opas.waltti.fi','/haku','https://opas.waltti.fi/haku');
   testResponseHeader('opas.waltti.fi','/haku', 'X-Frame-Options', undefined);
 
-  testRedirect('next-dev-opas.waltti.fi','/kissa','https://next-dev-opas.waltti.fi/kissa');
-  testProxying('next-dev-opas.waltti.fi','/','digitransit-ui-waltti-v3:8080', true);
+  testRedirect('dev-waltti.digitransit.fi','/kissa','https://dev-waltti.digitransit.fi/kissa');
+  testProxying('dev-waltti.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
 
   testRedirect('dev-raasepori.digitransit.fi','/kissa','https://dev-raasepori.digitransit.fi/kissa');
   testProxying('dev-raasepori.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
