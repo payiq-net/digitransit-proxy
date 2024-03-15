@@ -6,10 +6,13 @@ const assert = chai.assert;
 chai.use(chaiHttp);
 
 function get(host, path) {
-  return chai.request('http://127.0.0.1:9000')
-    .get(path)
-    .redirects(0)
-    .set('host', host)
+  const req = chai.request('http://127.0.0.1:9000')
+  .get(path)
+  .redirects(0)
+  if (host) {
+    req.set('host', host)
+  }
+  return req
 }
 
 function httpsGet(host, path) {
@@ -278,9 +281,9 @@ describe('otp debug', function() {
 
 describe('ext-proxy', function() {
   this.timeout(5000);
-  testCaching('api.digitransit.fi','/out/helsinki-fi.smoove.pro/api-public/stations',false);
-  testCaching('api.digitransit.fi','/out/data.foli.fi/citybike/smoove',false);
-  testCaching('api.digitransit.fi','/out/p.hsl.fi/api/v1/facilities.json?limit=-1',false);
-  testCaching('api.digitransit.fi','/out/92.62.36.215/RTIX/trip-updates',false);
-  testCaching('api.digitransit.fi','/out/stables.donkey.bike/api/public/gbfs/2/donkey_lappeenranta/en/station_status.json',false);
+  testCaching(null,'/out/helsinki-fi.smoove.pro/api-public/stations',false);
+  testCaching(null,'/out/data.foli.fi/citybike/smoove',false);
+  testCaching(null,'/out/p.hsl.fi/api/v1/facilities.json?limit=-1',false);
+  testCaching(null,'/out/92.62.36.215/RTIX/trip-updates',false);
+  testCaching(null,'/out/stables.donkey.bike/api/public/gbfs/2/donkey_lappeenranta/en/station_status.json',false);
 });
