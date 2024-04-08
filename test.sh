@@ -21,7 +21,7 @@ CONTAINER_ID=$(docker run -d -p 9000:8080 $ADDHOSTS -e VILKKU_BASIC_AUTH="\"test
   -e LMJ_BASIC_AUTH="\"test\"" -e MIKKELI_BASIC_AUTH="\"test\"" \
   -e VAASA_BASIC_AUTH="\"test\"" -e SALO_BASIC_AUTH="\"test\"" -e ROVANIEMI_BASIC_AUTH="\"test\"" \
   -e KOUVOLA_BASIC_AUTH="\"test\"" -e KAJAANI_BASIC_AUTH="\"test\"" -e OULU_RT_BASIC_AUTH="\"test\"" \
-  -e GIRAVOLTA_TAMPERE_AUTH="\"test\"" -e KOTKA_BASIC_AUTH="\"test\"" \
+  -e KOTKA_BASIC_AUTH="\"test\"" \
   -e GIRAVOLTA_VANTAA_AUTH="\"test\"" -e VARELY_BASIC_AUTH="\"test\"" -e VARELY_RT_BASIC_AUTH="\"test\"" \
   -e RAUMA_RT_BASIC_AUTH="\"test\"" -e RAUMA_STATIC_BASIC_AUTH="\"test\"" \
   -e PORI_RT_BASIC_AUTH="\"test\"" -e MH_BASIC_AUTH="\"test\"" -e RAASEPORI_RT_BASIC_AUTH="\"test\"" \
