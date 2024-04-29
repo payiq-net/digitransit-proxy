@@ -94,6 +94,15 @@ function testResponseHeader(host, path, header, headerValue) {
   });
 }
 
+function testResponseHeaderHttps(host, path, header, headerValue) {
+  it('http request to ' + host + path + ' should have response header: ' + header + ' should have value: ' + headerValue, function(done) {
+    httpsGet(host,path).end((err,res)=>{
+      expect(res.headers[header]).to.be.equal(headerValue);
+      done();
+    });
+  });
+}
+
 describe('api.digitransit.fi', function() {
 
   it('https should not redirect', function(done) {
@@ -240,7 +249,8 @@ describe('waltti ui', function() {
   testProxying('opas.waltti.fi','/','digitransit-ui-waltti-v3:8080', true);
 
   testRedirect('opas.waltti.fi','/haku','https://opas.waltti.fi/haku');
-  testResponseHeader('opas.waltti.fi','/haku', 'X-Frame-Options', undefined);
+  testResponseHeaderHttps('opas.waltti.fi','/haku', 'X-Frame-Options', undefined);
+  testResponseHeaderHttps('opas.waltti.fi','/haku', 'x-robots-tag', 'noindex, nofollow, nosnippet, noarchive');
 
   testRedirect('dev-waltti.digitransit.fi','/kissa','https://dev-waltti.digitransit.fi/kissa');
   testProxying('dev-waltti.digitransit.fi','/','digitransit-ui-waltti-v3:8080', true);
