@@ -18,13 +18,14 @@ CONTAINER_ID=$(docker run -d -p 9000:8080 $ADDHOSTS -e VILKKU_BASIC_AUTH="\"test
   -e JOJO_BASIC_AUTH="\"test\"" -e LAPPEENRANTA_BASIC_AUTH="\"test\"" -e LINKKI_BASIC_AUTH="\"test\"" \
   -e NEW_LISSU_BASIC_AUTH="\"test\"" -e LAHTI_BASIC_AUTH="\"test\"" \
   -e HAMEENLINNA_BASIC_AUTH="\"test\"" -e NEW_HSL_FI_URL=hsl.fi \
-  -e LMJ_BASIC_AUTH="\"test\"" -e MIKKELI_BASIC_AUTH="\"test\"" \
+  -e LMJ_BASIC_AUTH="\"test\"" -e NYSSE_BASIC_AUTH="\"test\"" -e MIKKELI_BASIC_AUTH="\"test\"" \
   -e VAASA_BASIC_AUTH="\"test\"" -e SALO_BASIC_AUTH="\"test\"" -e ROVANIEMI_BASIC_AUTH="\"test\"" \
   -e KOUVOLA_BASIC_AUTH="\"test\"" -e KAJAANI_BASIC_AUTH="\"test\"" -e OULU_RT_BASIC_AUTH="\"test\"" \
   -e KOTKA_BASIC_AUTH="\"test\"" \
   -e GIRAVOLTA_VANTAA_AUTH="\"test\"" -e VARELY_BASIC_AUTH="\"test\"" -e VARELY_RT_BASIC_AUTH="\"test\"" \
   -e RAUMA_RT_BASIC_AUTH="\"test\"" -e RAUMA_STATIC_BASIC_AUTH="\"test\"" \
   -e PORI_RT_BASIC_AUTH="\"test\"" -e MH_BASIC_AUTH="\"test\"" -e RAASEPORI_RT_BASIC_AUTH="\"test\"" \
+  -e WALTTI_TEST_CREDENTIALS_USER="test" -e WALTTI_TEST_CREDENTIALS_PASS="test" -e WALTTI_TEST_STATIC_BASIC_AUTH="\"test\"" \
   hsldevcom/digitransit-proxy:integrationtest)
 
 curl -v http://127.0.0.1:9000

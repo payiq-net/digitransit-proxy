@@ -85,6 +85,29 @@ function testRedirect(host, path, expectedUrl, secure=false) {
   });
 }
 
+function testCallingWithoutCredentials(host, path, secure=false) {
+  let fn = secure?httpsGet:get;
+  it('request to ' + host + path + ' 401 Unauthorized without credentials ', function(done) {
+    fn(host,path).end((err,res)=>{
+      expect(res).to.have.status(401);
+      done();
+    });
+  });
+}
+
+function testWithCorrectCredentials(host, path, username, password, expectedUrl, secure=true) {
+  let fn = secure ? httpsGet : get;
+  
+  it('request to ' + host + path + ' should return 200 OK with correct credentials ', function(done) {
+    fn(host, path)
+      .set('Authorization', 'Basic ' + Buffer.from(username + ':' + password).toString('base64'))
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
+}
+
 function testResponseHeader(host, path, header, headerValue) {
   it('http request to ' + host + path + ' should have response header: ' + header + ' should have value: ' + headerValue, function(done) {
     get(host,path).end((err,res)=>{
@@ -295,4 +318,9 @@ describe('ext-proxy', function() {
   testCaching(null,'/out/data.foli.fi/citybike/smoove',false);
   testCaching(null,'/out/92.62.36.215/RTIX/trip-updates',false);
   testCaching(null,'/out/stables.donkey.bike/api/public/gbfs/2/donkey_lappeenranta/en/station_status.json',false);
+});
+
+describe('waltti-test ui', function() {
+  testCallingWithoutCredentials('waltti-test.digitransit.fi','/kissa','https://waltti-test.digitransit.fi/kissa');
+  testWithCorrectCredentials('https://waltti-test.digitransit.fi','/kissa', 'test', 'test', 'https://waltti-test.digitransit.fi/kissa', true);
 });
