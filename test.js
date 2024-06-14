@@ -322,5 +322,5 @@ describe('ext-proxy', function() {
 
 describe('waltti-test ui', function() {
   testCallingWithoutCredentials('waltti-test.digitransit.fi','/kissa','https://waltti-test.digitransit.fi/kissa');
-  testWithCorrectCredentials('https://waltti-test.digitransit.fi','/kissa', 'test', 'test', 'https://waltti-test.digitransit.fi/kissa', true);
+  testWithCorrectCredentials('waltti-test.digitransit.fi','/kissa', 'test', 'test', 'https://waltti-test.digitransit.fi/kissa', true);
 });
