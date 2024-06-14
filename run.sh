@@ -31,6 +31,11 @@ sed -i "s/OULU_RT_BASIC_AUTH/${OULU_RT_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/RAASEPORI_RT_BASIC_AUTH/${RAASEPORI_RT_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/PORI_RT_BASIC_AUTH/${PORI_RT_BASIC_AUTH}/" /etc/nginx/external.conf
 sed -i "s/MH_BASIC_AUTH/${MH_BASIC_AUTH}/" /etc/nginx/external.conf
+sed -i "s/NYSSE_BASIC_AUTH/${NYSSE_BASIC_AUTH}/" /etc/nginx/external.conf
+sed -i "s/WALTTI_TEST_STATIC_BASIC_AUTH/${WALTTI_TEST_STATIC_BASIC_AUTH}/" /etc/nginx/external.conf
+
+#set basic auth
+htpasswd -c -B -b .htpasswd $WALTTI_TEST_CREDENTIALS_USER $WALTTI_TEST_CREDENTIALS_PASS &>/dev/null
 
 #start nginx
 nginx

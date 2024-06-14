@@ -16,6 +16,9 @@ RUN rm /var/log/nginx/* && chmod -R a+rwX ${INSTALL_DIR} /etc/nginx/ /var/log/ng
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
+# Install apache2-utils for htpasswd
+RUN apk add --no-cache apache2-utils
+
 EXPOSE 8080
 
 ADD run.sh /usr/local/bin/
